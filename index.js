@@ -49,54 +49,43 @@ function changeImage() {
 }
 setInterval(changeImage, 10000);
 
-// Modal functionality
-const modal = document.getElementById("team-modal");
-const closeModal = document.querySelector(".close");
-const modalName = document.getElementById("modal-name");
-const modalPosition = document.getElementById("modal-position");
-const modalDescription = document.getElementById("modal-description");
 
-// Example team data (for modal content)
-const teamData = {
-  1: {
-    name: "Solaja Olufemi",
-    position: "CEO",
-    description: "BLA BLA BLA BLA."
-  },
-  2: {
-    name: "Solaja Adejoke",
-    position: "MD",
-    description: "BLA BLA BLA BLA BLA BLA BLA BLA."
-  },
-  3: {
-    name: "DOE",
-    position: "P",
-    description: "BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA."
-  }
-};
+const teamDetails = [
+    {
+        name: "Solaja Olufemi",
+        role: "CEO",
+        img: "./IMAGES/profile.png",
+        description: "(Note?)."
+    },
+    {
+        name: "Jane Smith",
+        role: "(POSITION)",
+        img: "./IMAGES/profile.png",
+        description: "(Note?)."
+    },
+    {
+        name: "James Brown",
+        role: "(POSITION)",
+        img: "./IMAGES/profile.png",
+        description: "(Note?)."
+    }
+];
 
-// Open modal with team member info
-document.querySelectorAll(".view-more-btn").forEach(button => {
-  button.addEventListener("click", function() {
-    const memberId = this.closest(".team-card").getAttribute("data-member");
-    const memberData = teamData[memberId];
+function showModal(index) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalName = document.getElementById('modal-name');
+    const modalRole = document.getElementById('modal-role');
+    const modalDescription = document.getElementById('modal-description');
 
-    modalName.textContent = memberData.name;
-    modalPosition.textContent = memberData.position;
-    modalDescription.textContent = memberData.description;
+    modal.style.display = "flex";
+    modalImg.src = teamDetails[index].img;
+    modalName.textContent = teamDetails[index].name;
+    modalRole.textContent = teamDetails[index].role;
+    modalDescription.textContent = teamDetails[index].description;
+}
 
-    modal.style.display = "block";
-  });
-});
-
-// Close the modal
-closeModal.addEventListener("click", function() {
-  modal.style.display = "none";
-});
-
-// Close modal by clicking outside of it
-window.onclick = function(event) {
-  if (event.target == modal) {
+function closeModal() {
+    const modal = document.getElementById('modal');
     modal.style.display = "none";
-  }
-};
+}

@@ -18,6 +18,9 @@ body{
 .navbar-nav{
     padding-left: 500px;
 }
+#nav-left{
+    padding-left: 500px;
+}
 .nav-link:hover{
     color: #722F37;
 }
@@ -45,11 +48,11 @@ body{
 }
 
 .cards .blue {
-    background-color: #3b82f6;
+    background-color: #f43f5e;
 }
 
 .cards .green {
-    background-color: #22c55e;
+    background-color: #f43f5e;
 }
 
 .cards .card {
@@ -129,7 +132,7 @@ body{
     right: -300px;
     width: 200px;
     height: 100%;
-    background-color: #722F37;
+    background-color: #f43f5e;
     color: rgb(247, 240, 240);
     overflow-x: hidden;
     transition: 0.5s;
@@ -148,7 +151,7 @@ body{
 .sidebar .close-btn {
     position: absolute;
     top: 20px;
-    left: 164px;
+    left: 154px;
     height: 30px;
     width: 28px;
     background: none;
@@ -158,7 +161,6 @@ body{
 }
 .sidebar.open{
     right: 0;
-    overflow: hidden;
 }
 .image-container{
     position: relative;
@@ -260,7 +262,7 @@ body{
     background: #ebebeb;
 }
 .part2{
-    padding: 5.3rem 0;
+    padding: 2.3rem 0;
 }
 .part2-intro{
     color: #010103;
@@ -310,6 +312,7 @@ body{
     margin: 1rem auto 5rem;
     max-width: 40rem;
     text-align: center;
+    margin-top: 10rem;
 }
 .hhh2{
     font-family: Poppins,sans-serif;
@@ -329,7 +332,7 @@ body{
 }
 .brand-i{
     margin-top: 0px;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
     overflow: hidden;
 }
 .brand-icons{
@@ -367,16 +370,6 @@ body{
     cursor: pointer;
     color: #333;
 }
-
-
-
-
-
-
-
-
-
-
 /* gallery style */
 #feature-img {
     height: 21rem;
@@ -399,17 +392,104 @@ body{
 .e-head{
     margin-left: 4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
+/* meet our team*/
+.team-section {
+    text-align: center;
+    padding: 50px 0;
+}
+.team-section h1 {
+    margin-bottom: 50px;
+    font-size: 3.5rem;
+    color: #722F37;
+    text-decoration: underline;
+}
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+}
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 20rem;
+    height: 30rem;
+}
+.team-member:hover {
+    transform: translateY(-10px);
+}
+.team-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.member-info {
+    padding: 20px;
+    text-align: center;
+    color: #722F37;
+}
+.member-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+.member-info p {
+    color: #888;
+    font-size: 1rem;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: white;
+    padding-top: 61px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 25%;
+    height: auto;
+  }
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    height: 22rem;
+    object-fit: cover;
+  }
+.modal-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.modal-role {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.modal-description {
+    font-size: 1rem;
+    color: #444;
+}
+/**/
 .footer {
     background-color: #333;
     color: #fff;
@@ -491,9 +571,9 @@ body{
 
 }
 @media(max-width:1066px){
-    .navbar-nav{
-        padding-left: 280px;
-    }
+    #nav-left {
+        padding-left: 220px;
+      }
 }
 @media(max-width:1058px){
     .text-overlay{
@@ -502,6 +582,10 @@ body{
     .welcome{
         left: 42%;
     }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
  
 
 }
@@ -545,17 +629,21 @@ body{
         top: 57px;
         right: -300px;
         width: 200px;
-        height: 27%;
-        background-color: #722F37;
+        height: 34%;
+        background-color: #f43f5e;
         color: rgb(247, 240, 240);
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
         z-index: 999;
     }
+ 
 }
 @media(max-width:835px){
-  
+    #scrollToTopBtn.show {
+        display: block;
+        margin-bottom: 10rem;
+      }
 }
 
 @media(max-width:822px){
@@ -590,6 +678,12 @@ body{
         width: 18rem;
     }
 }
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 @media(max-width:750px){
     .text-overlay{
@@ -604,12 +698,12 @@ body{
     }
 }
 @media(max-width:640px){
-   .brand-partners{
+    .brand-partners {
         color: #010103;
-        margin: 1rem auto 5rem;
+        margin: 5rem auto 5rem;
         max-width: 34rem;
         text-align: center;
-   }
+      }
    .hhh2{
         font-family: Poppins,sans-serif;
         font-size: 2rem;
@@ -639,12 +733,12 @@ body{
   }
 }
 @media(max-width:580px){
-    .brand-partners{
+    .brand-partners {
         color: #010103;
-        margin: 1rem auto 5rem;
+        margin: 5rem auto 5rem;
         max-width: 28rem;
         text-align: center;
-    }
+      }
     .cards {
         display: flex;
         flex-direction: column;
@@ -658,6 +752,15 @@ body{
         cursor: pointer;
         color: #ffffff;
         font-size: 20px;
+      }
+      .modal-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        max-width: 500px;
+        width: 52%;
       }
 }
 @media(max-width:560px){
@@ -705,6 +808,15 @@ body{
     .about-us img{
         margin-top: 20px;
     }
+    .modal-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        max-width: 500px;
+        width: 77%;
+      }
 }
 @media(max-width: 420px){
     figcaption h4{
@@ -734,7 +846,7 @@ body{
     }
     .brand-partners{
         color: #010103;
-        margin: 1rem auto 5rem;
+        margin: 5rem auto 5rem;
         max-width: 20rem;
         text-align: center;
     }
